@@ -4,8 +4,7 @@
 package edu.asu.teamq.brainsurge.authentication;
 
 /**
- * @author james
- *
+ * Representation of a user logged into the site.
  */
 public class User {
 

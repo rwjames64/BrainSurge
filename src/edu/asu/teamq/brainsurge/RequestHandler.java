@@ -1,6 +1,7 @@
 package edu.asu.teamq.brainsurge;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +19,9 @@ import edu.asu.teamq.brainsurge.view.View;
 import edu.asu.teamq.brainsurge.view.ViewImpl;
 
 /**
- * Servlet implementation class RequestHandler
+ * The RequestHandler handles all requests for BrainSurge and serves as the
+ * Controller. Requests are parsed to the page requested and the parameters
+ * entered and sent to the appropriate components to process the request.
  */
 @WebServlet("/")
 public class RequestHandler extends HttpServlet {
@@ -42,8 +45,11 @@ public class RequestHandler extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String page = request.getServletPath().substring(1);
+		Map<String, String[]> params = request.getParameterMap();
+		
 		User user = authenticationHandler.getUser("");
-		Content content = contentHandler.get(user, request.getRequestURI());
+		Content content = contentHandler.get(user, page, params);
 		response.getWriter().print(view.format(content, user));
 	}
 

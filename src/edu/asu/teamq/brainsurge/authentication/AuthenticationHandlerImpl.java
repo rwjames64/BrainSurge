@@ -4,8 +4,7 @@
 package edu.asu.teamq.brainsurge.authentication;
 
 /**
- * @author james
- *
+ * Implementation of the AuthenticationHandler interface as a proof of concept.
  */
 public class AuthenticationHandlerImpl implements AuthenticationHandler {
 
