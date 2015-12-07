@@ -1,7 +1,7 @@
 # BrainSurge
 
 ## Description
-This is a proof of concept for an educational portal to verify the feasability of creating the application using a Java based server.
+This is a proof of concept for a class project representing an educational portal to verify the feasability of creating the application using a Java based server.
 
 ## Key Classes
 ### src.edu.asu.teamq.brainsurge.RequestHandler
